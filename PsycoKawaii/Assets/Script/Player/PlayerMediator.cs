@@ -6,11 +6,14 @@ public class PlayerMediator : MonoBehaviour
     private MovementController _movementController;
     private NpcDetector _npcDetector;
     private AttackController _attackController;
+    private PlayerAnimator _playerAnimator;
     public LevelOfPsychopath _levelOfPsychopath { internal set; get; }
 
     [Header("Configuracion Movimiento")]
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private int _speed;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _dust;
 
     [Header("Configuracion DeteccionNpc")]
     [SerializeField] private int _radiusDetection;
@@ -37,10 +40,12 @@ public class PlayerMediator : MonoBehaviour
                            _porcentToAttack, transform, _radiusAlert, _layerDetection);
 
         _movementController = new MovementController(_rigidbody2D, _levelOfPsychopath, _npcDetector, _speed);
+        _playerAnimator = new PlayerAnimator(_animator, _movementController, _dust);
     }
 
     void Update()
     {
+        _playerAnimator.WalkAnim();
 
         if (_pause)
         {

@@ -39,6 +39,11 @@ public class MovementController
         return (myTransform.position - _npcDetector.GetNpcTarget().position).normalized;
     }
 
+    public Vector2 DirectionToWalk()
+    {
+        return _movement;
+    }
+
     public void DoMove(Vector2 input, Vector2 inputToNpc)
     {
         var movementInput = input * _speed;

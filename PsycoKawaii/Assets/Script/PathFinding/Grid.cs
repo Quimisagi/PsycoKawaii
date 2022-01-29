@@ -41,7 +41,7 @@ public class Grid
                 bool walk = !Physics.CheckSphere(offset, 1, _wallLayer);
 
 
-                var node = Object.Instantiate(_node, offset, Quaternion.identity);
+                var node = Object.Instantiate(_node, offset, Quaternion.identity, _myTransform);
 
                 var nodePosition = new Vector2Int((int)offset.x, (int)offset.y);
 

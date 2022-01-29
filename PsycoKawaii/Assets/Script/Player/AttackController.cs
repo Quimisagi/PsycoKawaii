@@ -7,6 +7,9 @@ public class AttackController
     private readonly float _radiusToAttack;
     private readonly int _porcentToAttack;
     private readonly Transform _myTransform;
+    private float _timeToNextAttack = 3;
+    private float _currentTimeToNextAttack;
+    private int _levelMadness;
 
     private readonly float _radiusAlert;
     private readonly LayerMask _npcLayer;
@@ -36,6 +39,12 @@ public class AttackController
             return false;
         }
 
+        if (_currentTimeToNextAttack < _timeToNextAttack)
+        {
+            _currentTimeToNextAttack += Time.deltaTime;
+            return false;
+        }
+
         var distance = (_myTransform.position - _npcDetector.GetNpcTarget().position).magnitude;
         if (distance < _radiusToAttack)
         {
@@ -47,6 +56,13 @@ public class AttackController
 
     public void DoAttack()
     {
+        _currentTimeToNextAttack -= _currentTimeToNextAttack;
+        _levelOfPsychopath.AddLevelPsychopath(5);
+        _levelMadness += 35;
+
+        ViewMadness.Instance.UpdateMadness(_levelMadness);
+        ViewMadness.Instance.ComprobateGameOver(_levelMadness);
+
         //_playerMediator.SetPause(true);
         var npc = _npcDetector.GetNpcTarget().GetComponent<NpcMediator>();
         npc._lifeController.Kill();
