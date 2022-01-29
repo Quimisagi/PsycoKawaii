@@ -7,7 +7,7 @@ public class NpcMediator : MonoBehaviour
     private ScaryController _scaryController;
 
     [Header("Configuracion Movimiento")]
-    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private int _speed;
 
     [Header("Configuracion Esconderse")]
@@ -19,8 +19,8 @@ public class NpcMediator : MonoBehaviour
 
     private void Awake()
     {
-        _npcMovementController = new NpcMovementController(_characterController, _speed, transform);
-        _lifeController = new LifeController(_characterController);
+        _npcMovementController = new NpcMovementController(_rigidbody2D, _speed, transform);
+        _lifeController = new LifeController(_rigidbody2D);
         _scaryController = new ScaryController(_pathFindingInstaller, _npcMovementController,
                                                 _radiusFindHidde, _hiddeLayer, transform);
 
@@ -28,7 +28,6 @@ public class NpcMediator : MonoBehaviour
 
     private void Update()
     {
-        TryMove();
         TryShake();
 
         if (test)
@@ -37,6 +36,11 @@ public class NpcMediator : MonoBehaviour
             test = false;
         }
     }
+    private void FixedUpdate()
+    {
+        TryMove();
+    }
+
 
     private void TryMove()
     {

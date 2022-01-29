@@ -9,7 +9,7 @@ public class PlayerMediator : MonoBehaviour
     public LevelOfPsychopath _levelOfPsychopath { internal set; get; }
 
     [Header("Configuracion Movimiento")]
-    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private int _speed;
 
     [Header("Configuracion DeteccionNpc")]
@@ -25,29 +25,42 @@ public class PlayerMediator : MonoBehaviour
     [SerializeField] private int _porcentToAttack;
     [SerializeField] private float _radiusAlert;
 
-    private bool _pause;
+    [SerializeField] private bool _pause;
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
         _npcDetector = new NpcDetector(_radiusDetection, _layerDetection, transform);
         _levelOfPsychopath = new LevelOfPsychopath(_nextTimeToAdd, _speed, _madnessPerSecond);
         _attackController = new AttackController( _npcDetector, _levelOfPsychopath, _radiusToAttack,
                            _porcentToAttack, transform, _radiusAlert, _layerDetection);
 
-        _movementController = new MovementController(_characterController, _levelOfPsychopath, _npcDetector, _speed);
+        _movementController = new MovementController(_rigidbody2D, _levelOfPsychopath, _npcDetector, _speed);
     }
 
     void Update()
     {
+
         if (_pause)
         {
             return;
         }
-
-        PlayerMovement();
+        TryAttack();
         _levelOfPsychopath.PsychopathController();
         _npcDetector.DetectorNpc();
-        TryAttack();
+    }
+
+    private void FixedUpdate()
+    {
+        if (_pause)
+        {
+            _movementController.DoMove(Vector2.zero, Vector2.zero);
+            return;
+        }
+
+        PlayerMovement();
+
     }
 
     private void PlayerMovement()
@@ -61,6 +74,7 @@ public class PlayerMediator : MonoBehaviour
     {
         if (_attackController.TryAttack())
         {
+            Debug.Log("Atacar");
             _attackController.DoAttack();
         }
     }

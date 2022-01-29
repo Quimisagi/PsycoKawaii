@@ -58,7 +58,7 @@ public class AttackController
 
     private void AlertNeighbors()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(_myTransform.position, _radiusAlert * 3, _npcLayer);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(_myTransform.position, _radiusAlert * 3, _npcLayer);
 
         if (hitColliders.Length <= 0)
         {

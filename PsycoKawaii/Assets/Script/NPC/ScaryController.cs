@@ -52,13 +52,7 @@ public class ScaryController
         var endPosition = pathFindingBFS.FindNode(targetHiddent);
         var startPosition = pathFindingBFS.FindNode(_myTransform.position);
 
-        Debug.Log(endPosition.name);
-        Debug.Log(startPosition.name);
-
         var path = pathFindingBFS.FindPath(startPosition, endPosition);
-        Debug.Log(pathFindingBFS.FindPath(startPosition, endPosition).Count);
-        Debug.Log(path);
-        Debug.Log(path.Count);
 
         _npcMovementController.SetPath(path);
         _npcMovementController.InitWay();

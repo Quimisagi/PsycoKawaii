@@ -21,7 +21,7 @@ public class NpcDetector
 
     public void DetectorNpc()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(_myTransform.position, _radiusDetection, _layerDetection);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(_myTransform.position, _radiusDetection, _layerDetection);
     
         if (hitColliders.Length < 1)
         {
@@ -39,7 +39,7 @@ public class NpcDetector
         
     }
 
-    private Transform GetClosestNpc(Collider[] Npc)
+    private Transform GetClosestNpc(Collider2D[] Npc)
     {
         float closeDistance = _radiusDetection * 4;
         Transform npcTarget = null;

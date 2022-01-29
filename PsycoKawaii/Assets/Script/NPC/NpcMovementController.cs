@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NpcMovementController
 {
-    private readonly CharacterController _characterController;
+    private readonly Rigidbody2D _rigidbody2D;
     private readonly int _speed;
     private readonly Transform _myTransform;
 
@@ -12,9 +12,9 @@ public class NpcMovementController
     private List<Node> _path = new List<Node>();
     private bool _isMove;
 
-    public NpcMovementController(CharacterController characterController, int speed, Transform myTransform)
+    public NpcMovementController(Rigidbody2D rigidbody2D, int speed, Transform myTransform)
     {
-        _characterController = characterController;
+        _rigidbody2D = rigidbody2D;
         _speed = speed;
         _myTransform = myTransform;
     }
@@ -53,6 +53,8 @@ public class NpcMovementController
             {
                 Debug.Log("Termino Recorrido");
                 _isMove = false;
+                _rigidbody2D.velocity = Vector2.zero;
+
                 return;
             }
 
@@ -63,7 +65,6 @@ public class NpcMovementController
 
         var directionInput = (_actualPosition - _myTransform.position).normalized;
 
-        Debug.Log(directionInput);
-        _characterController.Move(directionInput * (_speed * Time.deltaTime));
+        _rigidbody2D.velocity = directionInput * _speed;
     }
 }

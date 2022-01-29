@@ -2,13 +2,13 @@
 
 public class LifeController
 {
-    private readonly CharacterController _characterController;
+    private readonly Rigidbody2D _rigidbody2D;
 
     private bool _isAlive;
 
-    public LifeController(CharacterController characterController)
+    public LifeController(Rigidbody2D rigidbody2D)
     {
-        _characterController = characterController;
+        _rigidbody2D = rigidbody2D;
         _isAlive = true;
     }
 
@@ -21,7 +21,7 @@ public class LifeController
     public void Kill()
     {
         _isAlive = false;
-        _characterController.enabled = false;
+        _rigidbody2D.simulated = false;
     }
 
     

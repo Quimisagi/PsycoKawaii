@@ -8,9 +8,15 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private int _speedCamera;
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         FollowTarget();
+    }
+
+    private void Start()
+    {
+        _playerMediator = FindObjectOfType<PlayerMediator>();
+        SetTarget(_playerMediator.transform);
     }
 
     public void SetTarget(Transform newTarget)
