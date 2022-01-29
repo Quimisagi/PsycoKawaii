@@ -673,10 +673,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: b4e84579-8396-4dfd-bdec-f98aafdeff9a
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: PsycoKawaii
+  organizationId: quimisagi
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
