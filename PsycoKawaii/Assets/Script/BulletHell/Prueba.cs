@@ -12,6 +12,7 @@ public class Prueba : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
         Goodness.notifyDestroyed += cogioGoodness;
         Evilness.notifyGameOver += cogioBadness;
+        Timer.notifyTimeRanOut += cogioBadness;
     }
 
     private void cogioGoodness()

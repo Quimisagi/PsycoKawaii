@@ -2,21 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Evilness : MonoBehaviour
+public class Evilness : SoulCharge
 {
     public delegate void EvilnessDelegate();
     public static event EvilnessDelegate notifyGameOver;
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void Start()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            notifyGameOver?.Invoke();
-            Destroy(collision.gameObject);
-        }
+        _rigidBody = GetComponent<Rigidbody2D>();
+        Goodness.notifyDestroyed += Finish;
+        Timer.notifyTimeRanOut += Finish;
+
     }
 
     private void OnDestroy()
     {
         notifyGameOver = null;
+        Goodness.notifyDestroyed -= Finish;
+        Timer.notifyTimeRanOut -= Finish;
+    }
+
+    protected override void DetermineDirection()
+    {
+        var direction = (Soul.transform.position - this.transform.position).normalized;
+        _rigidBody.velocity = new Vector2(direction.x, direction.y) * GetVelocity();
+
+    }
+
+    private float GetVelocity()
+    {
+        switch (_value)
+        {
+            case 1:
+                return 3F;
+                break;
+            case 2:
+                return 1.5F;
+                break;
+            case 3:
+                return 0.5F;
+                break;
+        }
+        return 1F;
+    }
+
+    private void Finish()
+    {
+        _isActive   = false;
+        Destroy(this.gameObject);
+    }
+
+    protected override void SendNotification(Collider2D collision)
+    {
+        notifyGameOver?.Invoke();
+        Destroy(collision.gameObject);
+        StopMoving();
     }
 }
