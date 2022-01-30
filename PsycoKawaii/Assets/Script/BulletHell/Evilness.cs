@@ -19,7 +19,7 @@ public class Evilness : SoulCharge
 
     private void OnDestroy()
     {
-        notifyGameOver = null;
+        //notifyGameOver = null;
         Goodness.notifyDestroyed -= Finish;
         Timer.notifyTimeRanOut -= Finish;
         GameActivator.startGame -= () => _isActive = true;
@@ -27,6 +27,10 @@ public class Evilness : SoulCharge
 
     protected override void DetermineDirection()
     {
+        if (Soul == null)
+        {
+            return;
+        }
         var direction = (Soul.transform.position - this.transform.position).normalized;
         _rigidBody.velocity = new Vector2(direction.x, direction.y) * GetVelocity();
 
@@ -59,7 +63,10 @@ public class Evilness : SoulCharge
     protected override void SendNotification(Collider2D collision)
     {
         notifyGameOver?.Invoke();
-        Destroy(collision.gameObject);
+        Debug.Log("Paila so");
+        Debug.Log(collision.name);
+
         StopMoving();
+
     }
 }

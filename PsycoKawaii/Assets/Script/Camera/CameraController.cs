@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
 
         var newDirection = smoothMovement + Shake();
         newDirection.x = Mathf.Clamp(newDirection.x, _limitCameraX.x, _limitCameraX.y);
-        newDirection.y = Mathf.Clamp(newDirection.x, _limitCameraY.x, _limitCameraY.y);
+        newDirection.y = Mathf.Clamp(newDirection.y, _limitCameraY.x, _limitCameraY.y);
 
 
         transform.position = newDirection;

@@ -11,11 +11,15 @@ public class Goodness : SoulCharge
 
     private void OnDestroy()
     {
-        notifyDestroyed = null;
+        //notifyDestroyed = null;
     }
 
     protected override void DetermineDirection()
     {
+        if (Soul == null)
+        {
+            return;
+        }
         var direction = -(Soul.transform.position - this.transform.position).normalized;
         _rigidBody.velocity = new Vector2(direction.x, direction.y);
 

@@ -22,6 +22,13 @@ public class LifeController
         return _isAlive;
     }
 
+    public void AddIdToListAndKill()
+    {
+        int id = _npc.gameObject.GetComponent<NpcMediator>().Id;
+        StateOfNPCs.Instance.DeadNPCs.Add(id);
+        Kill();
+    }
+
     public void Kill()
     {
         _isAlive = false;

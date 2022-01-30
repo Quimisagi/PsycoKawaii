@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AttackController
 {
+    public delegate void AttackDelegate();
+    public static event AttackDelegate startAtack;
+
     private readonly NpcDetector _npcDetector;
     private readonly LevelOfPsychopath _levelOfPsychopath;
     private readonly float _radiusToAttack;
@@ -13,6 +17,8 @@ public class AttackController
 
     private readonly float _radiusAlert;
     private readonly LayerMask _npcLayer;
+
+    private int _currentTarget;
 
     public AttackController(NpcDetector npcDetector, LevelOfPsychopath levelOfPsychopath,
                         float radiusToAttack, int porcentToAttack, Transform myTransform,
@@ -59,20 +65,42 @@ public class AttackController
     public void DoAttack()
     {
         _currentTimeToNextAttack -= _currentTimeToNextAttack;
+        startAtack?.Invoke();
+        SceneManager.LoadScene("BulletHell");
+        var npc = _npcDetector.GetNpcTarget().GetComponent<NpcMediator>();
+        _currentTarget = npc.Id;
+    }
+
+    public void Murder()
+    {
+        AddLevelMadness(35);
         _levelOfPsychopath.AddLevelPsychopath(5);
-        _levelMadness += 35;
 
         ViewMadness.Instance.UpdateMadness(_levelMadness);
         ViewMadness.Instance.ComprobateGameOver(_levelMadness);
-
         //_playerMediator.SetPause(true);
-        var npc = _npcDetector.GetNpcTarget().GetComponent<NpcMediator>();
-        npc._lifeController.Kill();
+        //var npc = _npcDetector.GetNpcTarget().GetComponent<NpcMediator>();
+        StateOfNPCs.Instance.DeadNPCs.Add(_currentTarget);
 
         AlertNeighbors();
-        Debug.Log("Activar Evento Combate");
     }
 
+    public void Forgive()
+    {
+        AddLevelMadness(-35);
+        _levelOfPsychopath.AddLevelPsychopath(-5);
+
+        ViewMadness.Instance.UpdateMadness(_levelMadness);
+    }
+
+
+    public void AddLevelMadness(int amount)
+    {
+        _levelMadness += amount;
+        Debug.Log(_levelMadness + " : " + _myTransform.name);
+
+        _levelMadness = Mathf.Clamp(_levelMadness, 0, 100);
+    }
 
     private void AlertNeighbors()
     {

@@ -8,6 +8,7 @@ public class PlayerMediator : MonoBehaviour
     private AttackController _attackController;
     private PlayerAnimator _playerAnimator;
     public LevelOfPsychopath _levelOfPsychopath { internal set; get; }
+    public AttackController AttackController { get => _attackController; set => _attackController = value; }
 
     [Header("Configuracion Movimiento")]
     [SerializeField] private Rigidbody2D _rigidbody2D;
@@ -59,12 +60,12 @@ public class PlayerMediator : MonoBehaviour
 
     void Update()
     {
-        _playerAnimator.WalkAnim();
 
         if (_pause)
         {
             return;
         }
+        _playerAnimator.WalkAnim();
 
         if (_pausePsychopath)
         {

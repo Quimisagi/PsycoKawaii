@@ -81,7 +81,7 @@ public class MovementController
         _currentTimeRandomWalk -= _currentTimeRandomWalk;
 
         _drunkMovement = new Vector2(x, y);
-        Debug.Log(_drunkMovement);
+        //Debug.Log(_drunkMovement);
 
     }
 }

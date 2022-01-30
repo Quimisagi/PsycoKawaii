@@ -37,9 +37,17 @@ public abstract class SoulCharge : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Soul")
         {
-            SendNotification(collision);
+            Debug.Log("Entre");
+            if (collision.GetComponent<CircleCollider2D>().enabled)
+            {
+                SendNotification(collision);
+            }
+
+            collision.GetComponent<CircleCollider2D>().enabled = false;
+            collision.gameObject.SetActive(false);
+           
         }
     }
 

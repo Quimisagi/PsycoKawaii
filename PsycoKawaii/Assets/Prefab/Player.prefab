@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6501678669292296633}
   m_Father: {fileID: 2852541186357058087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,6 +115,7 @@ GameObject:
   - component: {fileID: 2852541186357058085}
   - component: {fileID: 2852541186357058086}
   - component: {fileID: 2852541186357058082}
+  - component: {fileID: 3724091433669535449}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -133,7 +135,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2852541184572979479}
-  - {fileID: 6501678669292296633}
   - {fileID: 7621932138045539329}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -214,6 +215,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3724091433669535449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852541186357058083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15501f985b61c04bbda86115d4a6fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMediator: {fileID: 2852541186357058085}
+  _playerImage: {fileID: 2852541184572979476}
 --- !u!1 &5504848299510643747
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,12 +254,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5504848299510643747}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.099999994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2852541186357058087}
-  m_RootOrder: 1
+  m_Father: {fileID: 2852541184572979479}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &275921340202270466
 ParticleSystem:
@@ -4996,7 +5011,7 @@ Transform:
   m_LocalScale: {x: 5.207393, y: 2.4240394, z: 1}
   m_Children: []
   m_Father: {fileID: 2852541186357058087}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1159640062713829353
 SpriteRenderer:
