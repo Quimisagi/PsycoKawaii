@@ -7,6 +7,8 @@ public class Goodness : SoulCharge
     public delegate void GoodnessDelegate();
     public static event GoodnessDelegate notifyDestroyed;
 
+    [SerializeField] private ParticleSystem _particles;
+
     private void OnDestroy()
     {
         notifyDestroyed = null;
@@ -22,7 +24,8 @@ public class Goodness : SoulCharge
     protected override void SendNotification(Collider2D collision)
     {
         notifyDestroyed?.Invoke();
-        Destroy(this.gameObject);
+        this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255, 0);
+        _particles.Play();
         StopMoving();
     }
 }

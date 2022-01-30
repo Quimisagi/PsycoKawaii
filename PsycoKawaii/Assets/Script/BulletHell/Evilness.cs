@@ -13,6 +13,7 @@ public class Evilness : SoulCharge
         Goodness.notifyDestroyed += Finish;
         Timer.notifyTimeRanOut += Finish;
         GameActivator.startGame += () => _isActive = true;
+        _isActive = false;
 
     }
 
@@ -51,7 +52,8 @@ public class Evilness : SoulCharge
     private void Finish()
     {
         _isActive   = false;
-        Destroy(this.gameObject);
+        _rigidBody.velocity = new Vector2(0, 0);
+        //Destroy(this.gameObject);
     }
 
     protected override void SendNotification(Collider2D collision)
