@@ -1,0 +1,824 @@
+fileFormatVersion: 2
+guid: fd577a152859a4049971eaf87ac1f37b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -391747471128466442
+    second: villagers_0
+  - first:
+      213: 5197014030804007483
+    second: villagers_1
+  - first:
+      213: -5851625893614358106
+    second: villagers_2
+  - first:
+      213: -8425507082378337802
+    second: villagers_3
+  - first:
+      213: 4701370912003592013
+    second: villagers_4
+  - first:
+      213: -4840747439601998770
+    second: villagers_5
+  - first:
+      213: 7471015673540758491
+    second: villagers_6
+  - first:
+      213: 7357414583596571994
+    second: villagers_7
+  - first:
+      213: 4658850493187735791
+    second: villagers_8
+  - first:
+      213: 5917531679998913325
+    second: villagers_9
+  - first:
+      213: 6027284192795801175
+    second: villagers_10
+  - first:
+      213: -8029742361377167582
+    second: villagers_11
+  - first:
+      213: 1749936670804301075
+    second: villagers_12
+  - first:
+      213: 399493850747911791
+    second: villagers_13
+  - first:
+      213: 1751200108539373250
+    second: villagers_14
+  - first:
+      213: -7509506523542371585
+    second: villagers_15
+  - first:
+      213: -8317216101777711271
+    second: villagers_16
+  - first:
+      213: -7560797989969806190
+    second: villagers_17
+  - first:
+      213: -5146538164520006548
+    second: villagers_18
+  - first:
+      213: 2465560295747526369
+    second: villagers_19
+  - first:
+      213: 6330979597164751685
+    second: villagers_20
+  - first:
+      213: 5971646125925511268
+    second: villagers_21
+  - first:
+      213: -2514785173124509421
+    second: villagers_22
+  - first:
+      213: 5616058220294016732
+    second: villagers_23
+  - first:
+      213: 5015210668825684552
+    second: villagers_24
+  - first:
+      213: -124633196550774109
+    second: villagers_25
+  - first:
+      213: -438315067658109089
+    second: villagers_26
+  - first:
+      213: 4011259672981895573
+    second: villagers_27
+  - first:
+      213: -5347686639437414876
+    second: villagers_28
+  - first:
+      213: 1252880843337273738
+    second: villagers_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: villagers_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 144
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbeab520cb309af0800000000000000
+      internalID: -391747471128466442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 144
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a3bced9b08f1840800000000000000
+      internalID: 5197014030804007483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 144
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a173a4c049dacea0800000000000000
+      internalID: -5851625893614358106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f12d46e2f5921b80800000000000000
+      internalID: -8425507082378337802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 144
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f045f7fef9e3140800000000000000
+      internalID: 4701370912003592013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 144
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44242fd9d532dcb0800000000000000
+      internalID: -4840747439601998770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 112
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbc5c40c216ea760800000000000000
+      internalID: 7471015673540758491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_7
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 112
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d5d802599ca1660800000000000000
+      internalID: 7357414583596571994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 112
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0cb1407df87a040800000000000000
+      internalID: 4658850493187735791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ba475e5bb4f1250800000000000000
+      internalID: 5917531679998913325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 112
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756bbe71a0735a350800000000000000
+      internalID: 6027284192795801175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 112
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2272530addf909090800000000000000
+      internalID: -8029742361377167582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 81
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31558ba6126094810800000000000000
+      internalID: 1749936670804301075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 81
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e38c76a894b8500800000000000000
+      internalID: 399493850747911791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_14
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 81
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c66d1078338d4810800000000000000
+      internalID: 1751200108539373250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 82
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff247c99a9fd8c790800000000000000
+      internalID: -7509506523542371585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_16
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 81
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f516d9500539c80800000000000000
+      internalID: -8317216101777711271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_17
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 81
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cbc557946a21790800000000000000
+      internalID: -7560797989969806190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 51
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c4bc09ec2d398b0800000000000000
+      internalID: -5146538164520006548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_19
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 51
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee9650a60e673220800000000000000
+      internalID: 2465560295747526369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_20
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 51
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b204196682cd750800000000000000
+      internalID: 6330979597164751685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 51
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460b02c238c8fd250800000000000000
+      internalID: 5971646125925511268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_22
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 50
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3119e7d7530b91dd0800000000000000
+      internalID: -2514785173124509421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_23
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 50
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde898a323f30fd40800000000000000
+      internalID: 5616058220294016732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 20
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aaa15188b999540800000000000000
+      internalID: 5015210668825684552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_25
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 20
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2ae50a4c6354ef0800000000000000
+      internalID: -124633196550774109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_26
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 20
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f798ca4cacae9f0800000000000000
+      internalID: -438315067658109089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_27
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 20
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5997fe58b6bdaa730800000000000000
+      internalID: 4011259672981895573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_28
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 19
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42efa3ea55339c5b0800000000000000
+      internalID: -5347686639437414876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: villagers_29
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 19
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81920d2d70236110800000000000000
+      internalID: 1252880843337273738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

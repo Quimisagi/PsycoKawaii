@@ -16,11 +16,12 @@ public class NpcMediator : MonoBehaviour
     [SerializeField] private LayerMask _hiddeLayer;
 
     [SerializeField] private bool test;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _npcMovementController = new NpcMovementController(_rigidbody2D, _speed, transform);
-        _lifeController = new LifeController(_rigidbody2D);
+        _lifeController = new LifeController(_rigidbody2D, _spriteRenderer, transform);
         _scaryController = new ScaryController(_pathFindingInstaller, _npcMovementController,
                                                 _radiusFindHidde, _hiddeLayer, transform);
 

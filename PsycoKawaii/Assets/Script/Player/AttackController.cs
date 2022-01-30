@@ -43,7 +43,6 @@ public class AttackController
 
         if (_currentTimeToNextAttack < _timeToNextAttack)
         {
-            Debug.Log(_currentTimeToNextAttack);
             _currentTimeToNextAttack += Time.deltaTime;
             return false;
         }

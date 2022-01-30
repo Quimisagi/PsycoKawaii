@@ -152,18 +152,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 2852541186357058082}
   _speed: 5
+  _timeRandomWalk: 1
   _animator: {fileID: 793087513}
   _dust: {fileID: 275921340202270466}
-  _radiusDetection: 4
+  _radiusDetection: 3
   _layerDetection:
     serializedVersion: 2
     m_Bits: 1024
-  _nextTimeToAdd: 3
-  _madnessPerSecond: 2
-  _radiusToAttack: 1.2
+  _timeToStart: 5
+  _nextTimeToAdd: 2
+  _madnessPerSecond: 2.5
+  _radiusToAttack: 1.3
   _porcentToAttack: 9
   _radiusAlert: 3.2
   _pause: 0
+  _pausePsychopath: 0
 --- !u!61 &2852541186357058086
 BoxCollider2D:
   m_ObjectHideFlags: 0
