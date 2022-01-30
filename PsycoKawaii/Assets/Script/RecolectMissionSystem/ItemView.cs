@@ -29,8 +29,9 @@ public class ItemView : MonoBehaviour
     {
         if (_id == id)
         {
-            _itemImage.sprite = null;
-            Destroy(gameObject, 5);
+            LeanTween.scale(_itemImage.gameObject, Vector3.zero, 1.5f).setEaseInBounce();
+            //_itemImage.sprite = null;
+            Destroy(gameObject, 2);
         }
     }
 }

@@ -30,6 +30,9 @@ public class LevelOfPsychopath
     public void AddLevelPsychopath(float amount)
     {
         _currentLevelMadness += amount;
+        _currentLevelMadness = Mathf.Clamp(_currentLevelMadness,0, 100);
+        ViewMadness.Instance.UpdateMadnessView(_currentLevelMadness);
+        
     }
 
     public void PsychopathController()

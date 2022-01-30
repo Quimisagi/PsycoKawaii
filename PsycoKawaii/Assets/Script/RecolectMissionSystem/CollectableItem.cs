@@ -10,6 +10,7 @@ public class CollectableItem : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer.sprite = myitem.itemImage;
+        LeanTween.scale(gameObject, Vector3.one * 0.5f, 1).setEaseInCubic().setLoopPingPong();
     }
 
     private bool ComprobateMission()

@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class ViewMadness : MonoBehaviour
 {
     public static ViewMadness Instance;
+    private PlayerMediator _playerMediator;
 
     [SerializeField] private Text _porcent;
     [SerializeField] private Image _fillMadness;
 
-    [SerializeField] private GameObject _endGame;
+    [SerializeField] private CanvasGroup _viewMadness;
+    [SerializeField] private CanvasGroup _endGame;
 
     private void Awake()
     {
@@ -22,6 +24,10 @@ public class ViewMadness : MonoBehaviour
 
         Instance = this;
         UpdateMadness(0);
+    }
+    private void Start()
+    {
+        _playerMediator = FindObjectOfType<PlayerMediator>();
     }
 
     public void UpdateMadness(float porcentMadness)
@@ -35,8 +41,16 @@ public class ViewMadness : MonoBehaviour
     {
         if (porcentMadness >= 100)
         {
-            _endGame.SetActive(true);
+            LeanTween.alphaCanvas(_endGame, 1,1);
+            _playerMediator.SetPause(true);
         }
+    }
+
+    public void UpdateMadnessView(float madness)
+    {
+        var porcentMadness = madness / 100;
+        LeanTween.alphaCanvas(_viewMadness, porcentMadness / 2, 0.5f);
+
     }
 
 }

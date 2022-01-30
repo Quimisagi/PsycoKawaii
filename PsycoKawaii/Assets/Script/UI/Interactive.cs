@@ -9,6 +9,7 @@ public class Interactive : MonoBehaviour
 
     private void Awake()
     {
+        _diaglogueView.transform.localScale = Vector3.zero;
         _diaglogueView.SetActive(false);
     }
 
@@ -20,12 +21,17 @@ public class Interactive : MonoBehaviour
             _player = collision.GetComponent<PlayerMediator>();
             _canSpeak = true;
             _diaglogueView.SetActive(true);
+            LeanTween.scale(_diaglogueView, Vector3.one, 0.5f).setEaseOutBounce();
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _diaglogueView.SetActive(false);
+        //_diaglogueView.SetActive(false);
+        LeanTween.scale(_diaglogueView, Vector3.zero, 0.2f).setEaseInBounce().setOnComplete(() => { _diaglogueView.SetActive(false); });
+
+        
         _player = null;
         _canSpeak = false;
     }

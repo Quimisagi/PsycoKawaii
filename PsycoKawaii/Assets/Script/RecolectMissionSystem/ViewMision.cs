@@ -10,7 +10,7 @@ public class ViewMision : MonoBehaviour
     private void Awake()
     {
         _viewMisionBox.SetActive(false);
-
+        _viewMisionBox.transform.localScale = Vector3.zero;
         MisionInstaller._EventMision += ShowMisionBox;
 
     }
@@ -24,6 +24,7 @@ public class ViewMision : MonoBehaviour
     public void ShowMisionBox(Mision mision)
     {
         _viewMisionBox.SetActive(true);
+        LeanTween.scale(_viewMisionBox, Vector3.one, 0.5f).setEaseOutBounce();
         CreateMisionBox(mision);
     }
 

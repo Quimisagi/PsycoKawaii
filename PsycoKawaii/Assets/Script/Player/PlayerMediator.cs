@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerMediator : MonoBehaviour
 {
-
     private MovementController _movementController;
     private NpcDetector _npcDetector;
     private AttackController _attackController;
@@ -12,6 +12,8 @@ public class PlayerMediator : MonoBehaviour
     [Header("Configuracion Movimiento")]
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private int _speed;
+    [SerializeField] private float _timeRandomWalk;
+
     [SerializeField] private Animator _animator;
     [SerializeField] private ParticleSystem _dust;
 
@@ -20,6 +22,7 @@ public class PlayerMediator : MonoBehaviour
     [SerializeField] private LayerMask _layerDetection;
 
     [Header("Configuracion Porcentaje Locura")]
+    [SerializeField] private float _timeToStart;
     [SerializeField] private int _nextTimeToAdd;
     [SerializeField] private float _madnessPerSecond;
 
@@ -29,6 +32,7 @@ public class PlayerMediator : MonoBehaviour
     [SerializeField] private float _radiusAlert;
 
     [SerializeField] private bool _pause;
+    [SerializeField] private bool _pausePsychopath;
 
     private void Start()
     {
@@ -39,8 +43,18 @@ public class PlayerMediator : MonoBehaviour
         _attackController = new AttackController( _npcDetector, _levelOfPsychopath, _radiusToAttack,
                            _porcentToAttack, transform, _radiusAlert, _layerDetection);
 
-        _movementController = new MovementController(_rigidbody2D, _levelOfPsychopath, _npcDetector, _speed);
+        _movementController = new MovementController(_rigidbody2D, _levelOfPsychopath, _npcDetector, _speed, _timeRandomWalk);
         _playerAnimator = new PlayerAnimator(_animator, _movementController, _dust);
+
+        _pausePsychopath = true;
+        StartCoroutine(waitForStart());
+    }
+
+    private IEnumerator waitForStart()
+    {
+        yield return new WaitForSeconds(_timeToStart);
+        _pausePsychopath = false;
+
     }
 
     void Update()
@@ -48,6 +62,11 @@ public class PlayerMediator : MonoBehaviour
         _playerAnimator.WalkAnim();
 
         if (_pause)
+        {
+            return;
+        }
+
+        if (_pausePsychopath)
         {
             return;
         }
@@ -60,7 +79,7 @@ public class PlayerMediator : MonoBehaviour
     {
         if (_pause)
         {
-            _movementController.DoMove(Vector2.zero, Vector2.zero);
+            _movementController.StopMove();
             return;
         }
 
