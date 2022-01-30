@@ -43,7 +43,7 @@ public class NpcMovementController
         _path = path;
     }
 
-   
+
     public void DoMovement()
     {
         if (Vector3.Distance(_myTransform.position, _actualPosition) < 0.1f)
@@ -67,4 +67,5 @@ public class NpcMovementController
 
         _rigidbody2D.velocity = directionInput * _speed;
     }
+
 }

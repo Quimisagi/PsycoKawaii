@@ -37,7 +37,20 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(timeFade);
         _fade.Hidden(timeFade);
         player.SetPause(false);
+    }
 
+    public void ChangeSceneName(string nameScene)
+    {
+        StartCoroutine(changeScene(nameScene));
+    }
+
+    private IEnumerator changeScene( string nameScene)
+    {
+        _fade.Show(0.5f);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(nameScene);
+        yield return new WaitForSeconds(0.5f);
+        _fade.Hidden(0.5f);
     }
 
 }
