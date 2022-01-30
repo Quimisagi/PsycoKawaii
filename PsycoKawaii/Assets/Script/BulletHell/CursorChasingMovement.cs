@@ -8,10 +8,6 @@ public class CursorChasingMovement : MonoBehaviour
     private float _count;
     [SerializeField] private float _speed = 1F;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

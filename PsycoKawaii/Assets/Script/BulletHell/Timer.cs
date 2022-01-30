@@ -14,12 +14,13 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         _timeText = GetComponent<TextMeshProUGUI>();
-        IsRunning = true;
+        GameActivator.startGame += () => IsRunning = true;
     }
 
     private void OnDestroy()
     {
         notifyTimeRanOut = null;
+        GameActivator.startGame -= () => IsRunning = true;
     }
 
     void DisplayTime(float timeToDisplay)

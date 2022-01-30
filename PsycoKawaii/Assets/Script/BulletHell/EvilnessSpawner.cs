@@ -6,11 +6,13 @@ public class EvilnessSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _evilnessList;
     [SerializeField] private List<GameObject> _patternsList;
-    public int MaxEvilness { get; set; }
+    
+    [SerializeField] private int maxEvilness = 20;
+
+    public int MaxEvilness { get => maxEvilness; set => maxEvilness = value; }
 
     private void Start()
     {
-        MaxEvilness = 15;
         GeneratePattern();
         GenerateEvilness();
     }
@@ -29,14 +31,14 @@ public class EvilnessSpawner : MonoBehaviour
             int num = Random.Range(0, _evilnessList.Count);
             var temp = Instantiate(_evilnessList[num]);
             temp.transform.position = GenerateRandomPosition();
-            
+
         }
     }
 
     public Vector3 GenerateRandomPosition()
     {
-        float posX = Random.Range(-8F, 8F);
-        float posY = Random.Range(-4.5F, 4.5F);
+        float posX = Random.Range(-7F, 8F);
+        float posY = Random.Range(-3.5F, 4.5F);
         if (posX < 1F && posX > 0) posX += 1F;
         if (posX > -1F && posX < 0) posX -= 1F;
         if (posY < 1F && posY > 0) posY += 1F;

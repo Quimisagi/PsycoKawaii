@@ -8,11 +8,15 @@ public class EqualToMousePositionMovement : MonoBehaviour
 
     private void Start()
     {
-        Cursor.visible = false;
         Goodness.notifyDestroyed += () => _isActive = false;
         Timer.notifyTimeRanOut += () => _isActive = false;
+        GameActivator.startGame += ActiveSoul;
+    }
 
-        _isActive  = true;
+    private void ActiveSoul()
+    {
+        _isActive = true;
+        Cursor.visible = false;
     }
 
     private void OnDestroy()

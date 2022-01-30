@@ -9,7 +9,7 @@ public abstract class SoulCharge : MonoBehaviour
     public bool IsSoulNear { get; set; }
     public GameObject Soul { get; set; }
     public int Value { get => _value; set => _value = value; }
-    protected bool _isActive = true;
+    protected bool _isActive;
 
     [SerializeField] protected int _value;
 

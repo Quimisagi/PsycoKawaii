@@ -12,6 +12,7 @@ public class Evilness : SoulCharge
         _rigidBody = GetComponent<Rigidbody2D>();
         Goodness.notifyDestroyed += Finish;
         Timer.notifyTimeRanOut += Finish;
+        GameActivator.startGame += () => _isActive = true;
 
     }
 
@@ -20,6 +21,7 @@ public class Evilness : SoulCharge
         notifyGameOver = null;
         Goodness.notifyDestroyed -= Finish;
         Timer.notifyTimeRanOut -= Finish;
+        GameActivator.startGame -= () => _isActive = true;
     }
 
     protected override void DetermineDirection()
