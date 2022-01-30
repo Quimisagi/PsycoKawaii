@@ -28,7 +28,7 @@ public class Goodness : SoulCharge
     protected override void SendNotification(Collider2D collision)
     {
         notifyDestroyed?.Invoke();
-        this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255, 0);
+        //this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255, 0);
         _particles.Play();
         StopMoving();
     }

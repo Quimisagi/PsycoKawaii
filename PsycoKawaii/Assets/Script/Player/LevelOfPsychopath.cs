@@ -30,6 +30,7 @@ public class LevelOfPsychopath
     public void AddLevelPsychopath(float amount)
     {
         _currentLevelMadness += amount;
+
         _currentLevelMadness = Mathf.Clamp(_currentLevelMadness,0, 100);
         ViewMadness.Instance.UpdateMadnessView(_currentLevelMadness);
         
@@ -37,17 +38,22 @@ public class LevelOfPsychopath
 
     public void PsychopathController()
     {
-        if (_currentTimeToAdd < _nextTimeToAdd)
-        {
-            _currentTimeToAdd += Time.deltaTime;
-            return;
-        }
 
         AddLevelPsychopath(_madnessPerSecond);
         _forceOfMadness = _speedPlayer * _currentLevelMadness / 100;
 
         _currentTimeToAdd -= _currentTimeToAdd;
 
+    }
+
+    public bool CanAddLevelOfPsychopath()
+    {
+        if (_currentTimeToAdd < _nextTimeToAdd)
+        {
+            _currentTimeToAdd += Time.deltaTime;
+            return false;
+        }
+        return true;
     }
 
 

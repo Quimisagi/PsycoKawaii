@@ -18,12 +18,12 @@ public class AudioController : MonoBehaviour
 
     private void Update()
     {
-        /*
+        
         if (_playerMediator._levelOfPsychopath.CanAddLevelOfPsychopath())
         {
-            _redicton = 1 - (_playerMediator._levelOfPsychopath.GetForceOfMadness() / 10);
+            _redicton = 1 - (_playerMediator._levelOfPsychopath.GetForceOfMadness() / 15);
 
-            Debug.Log(_playerMediator._levelOfPsychopath.GetForceOfMadness() / 10) ;
+            Debug.Log(_redicton) ;
 
             if (_playerMediator._levelOfPsychopath.GetForceOfMadness() > 1.5f && !_playBackground)
             {
@@ -33,7 +33,7 @@ public class AudioController : MonoBehaviour
         }
 
         _audioSource.pitch = Mathf.Lerp(_audioSource.pitch, _redicton, 1 * Time.deltaTime);
-        */
+        
     }
 
 

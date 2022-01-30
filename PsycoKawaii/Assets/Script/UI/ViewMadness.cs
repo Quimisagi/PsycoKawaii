@@ -41,6 +41,7 @@ public class ViewMadness : MonoBehaviour
     {
         if (porcentMadness >= 100)
         {
+            _endGame.gameObject.SetActive(true);
             LeanTween.alphaCanvas(_endGame, 1,1);
             _playerMediator.SetPause(true);
         }

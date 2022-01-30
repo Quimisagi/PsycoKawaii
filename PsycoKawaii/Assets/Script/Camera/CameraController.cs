@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController Instance { get; private set; }
+
+
     [SerializeField] private Vector2 _limitCameraX;
     [SerializeField] private Vector2 _limitCameraY;
     [SerializeField] private PlayerMediator _playerMediator;
     [SerializeField] private Transform _target;
     [SerializeField] private int _speedCamera;
+    public bool IsActive;
 
     void FixedUpdate()
     {
+        if (!IsActive)
+        {
+            return;
+        }
         FollowTarget();
+    }
+
+    private void Awake()
+    {
+        IsActive = true;
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
     }
 
     private void Start()
@@ -50,7 +72,7 @@ public class CameraController : MonoBehaviour
     public Vector3 Shake()
     {
         var shakeForce = _playerMediator._levelOfPsychopath.GetLevelMadness() / 10000;
-        Debug.Log(_playerMediator._levelOfPsychopath.GetLevelMadness());
+        //Debug.Log(_playerMediator._levelOfPsychopath.GetLevelMadness());
 
         float x = Random.Range(-1f, 1f) * shakeForce;
         float z = Random.Range(-1f, 1f) * shakeForce;

@@ -6,6 +6,8 @@ public class PlayerEventsReceptor : MonoBehaviour
 {
     [SerializeField] private PlayerMediator _playerMediator;
     [SerializeField] private GameObject _playerImage;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
 
     void Start()
     {
@@ -35,6 +37,10 @@ public class PlayerEventsReceptor : MonoBehaviour
     {
         StartCoroutine(Reactivate());
         _playerMediator.AttackController.Murder();
+
+        _audioSource.clip = _audioClip;
+        _audioSource.time = 0.9f;
+        _audioSource.Play();
     }
 
     private IEnumerator Reactivate()
@@ -42,6 +48,10 @@ public class PlayerEventsReceptor : MonoBehaviour
         yield return new WaitForSeconds(1);
         _playerImage.SetActive(true);
         _playerMediator.SetPause(false);
+        _playerMediator.ColdwonPause(3);
+
+        var camera = Camera.main.transform;
+        camera.GetComponent<CameraController>().IsActive = true;
     }
 
 
@@ -49,6 +59,10 @@ public class PlayerEventsReceptor : MonoBehaviour
     {
         _playerImage.SetActive(false);
         _playerMediator.SetPause(true);
+
+        var camera = Camera.main.transform;
+        camera.GetComponent<CameraController>().IsActive = false;
+        camera.position = new Vector3(0,0,camera.position.z);
 
     }
 }

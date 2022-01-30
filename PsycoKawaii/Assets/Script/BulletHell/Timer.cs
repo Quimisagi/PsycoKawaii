@@ -39,10 +39,12 @@ public class Timer : MonoBehaviour
             DisplayTime(_currentTime);
             _currentTime -= Time.deltaTime;
         }
-        if (_currentTime <= 0)
+
+        if (_currentTime <= 0 && IsRunning)
         {
             IsRunning   = false;
             notifyTimeRanOut?.Invoke();
+            Debug.Log("ASDASDASDasdASDasdas");
         }
             
     }

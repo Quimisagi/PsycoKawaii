@@ -89,6 +89,7 @@ public class AttackController
     {
         AddLevelMadness(-35);
         _levelOfPsychopath.AddLevelPsychopath(-5);
+        _currentTimeToNextAttack -= _currentTimeToNextAttack;
 
         ViewMadness.Instance.UpdateMadness(_levelMadness);
     }

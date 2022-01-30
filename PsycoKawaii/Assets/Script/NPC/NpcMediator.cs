@@ -22,10 +22,14 @@ public class NpcMediator : MonoBehaviour
 
     [SerializeField] private int _id;
 
+    [Header("Configuracion Grito")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
+
     private void Awake()
     {
         _npcMovementController = new NpcMovementController(_rigidbody2D, _speed, transform);
-        _lifeController = new LifeController(_rigidbody2D, _spriteRenderer, transform);
+        _lifeController = new LifeController(_rigidbody2D, _spriteRenderer, transform, _audioSource, _audioClip);
         _scaryController = new ScaryController(_pathFindingInstaller, _npcMovementController,
                                                 _radiusFindHidde, _hiddeLayer, transform);
 

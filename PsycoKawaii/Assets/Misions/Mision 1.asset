@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Mision 1
   m_EditorClassIdentifier: 
   CollectItems:
+  - ItemToCollet: {fileID: 11400000, guid: 87d899eef2f99e74d911574dc6447cc7, type: 2}
+    IsCollet: 0
+  - ItemToCollet: {fileID: 11400000, guid: fb491b335a385bb40a3a5656ff75018e, type: 2}
+    IsCollet: 0
   - ItemToCollet: {fileID: 11400000, guid: e23608ecf74050f438d161f0706df075, type: 2}
     IsCollet: 0
   MisionComplete: 0

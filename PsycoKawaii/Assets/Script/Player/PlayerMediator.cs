@@ -31,6 +31,8 @@ public class PlayerMediator : MonoBehaviour
     [SerializeField] private float _radiusToAttack;
     [SerializeField] private int _porcentToAttack;
     [SerializeField] private float _radiusAlert;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
 
     [SerializeField] private bool _pause;
     [SerializeField] private bool _pausePsychopath;
@@ -48,12 +50,19 @@ public class PlayerMediator : MonoBehaviour
         _playerAnimator = new PlayerAnimator(_animator, _movementController, _dust);
 
         _pausePsychopath = true;
-        StartCoroutine(waitForStart());
+        ColdwonPause(_timeToStart);
     }
 
-    private IEnumerator waitForStart()
+    public void ColdwonPause(float timeToStart)
     {
-        yield return new WaitForSeconds(_timeToStart);
+        _pausePsychopath = true;
+        StartCoroutine(waitForStart(timeToStart));
+
+    }
+
+    private IEnumerator waitForStart(float timeToStart)
+    {
+        yield return new WaitForSeconds(timeToStart);
         _pausePsychopath = false;
 
     }
@@ -72,7 +81,7 @@ public class PlayerMediator : MonoBehaviour
             return;
         }
         TryAttack();
-        _levelOfPsychopath.PsychopathController();
+        TryGetMadness();
         _npcDetector.DetectorNpc();
     }
 
@@ -101,6 +110,15 @@ public class PlayerMediator : MonoBehaviour
         {
             Debug.Log("Atacar");
             _attackController.DoAttack();
+           
+        }
+    }
+
+    private void TryGetMadness()
+    {
+        if (_levelOfPsychopath.CanAddLevelOfPsychopath())
+        {
+            _levelOfPsychopath.PsychopathController();
         }
     }
 
