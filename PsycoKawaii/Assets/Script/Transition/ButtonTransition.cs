@@ -31,6 +31,7 @@ public class ButtonTransition : MonoBehaviour
         Destroy(Camera.main.gameObject);
         Destroy(FindObjectOfType<PlayerMediator>().gameObject);
         Destroy(FindObjectOfType<ViewMision>().gameObject);
+        Destroy(FindObjectOfType<StateOfNPCs>().gameObject);
     }
 
 }
