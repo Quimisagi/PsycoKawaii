@@ -4,23 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ScreenFader : MonoBehaviour
+public class Fader2 : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
     private void Start()
     {
-        Goodness.notifyDestroyed += FadeInWhite;
-        Evilness.notifyGameOver += FadeInRed;
-        Timer.notifyTimeRanOut += FadeInRed;
         AttackController.startAtack += FadeInWhite;
-        FadeOut();
+        gameObject.SetActive(false);
     }
     private void OnDestroy()
     {
-        Goodness.notifyDestroyed -= FadeInWhite;
-        Evilness.notifyGameOver -= FadeInRed;
-        Timer.notifyTimeRanOut -= FadeInRed;
         AttackController.startAtack -= FadeInWhite;
     }
     public void FadeInWhite()
@@ -40,15 +34,15 @@ public class ScreenFader : MonoBehaviour
         gameObject.SetActive(true);
         GetComponent<CanvasGroup>().alpha = 0F;
         LeanTween.alphaCanvas(gameObject.GetComponent<CanvasGroup>(), 1F, _speed);
-        LeanTween.delayedCall(this.gameObject, 1F, () => SceneManager.LoadScene("SampleScene"));
+        LeanTween.delayedCall(this.gameObject, 0.5F, () => SceneManager.LoadScene("BulletHell"));
     }
 
-    public void FadeOut()
+    public void FadeOut(float velocity, float delayTime)
     {
         gameObject.SetActive(true);
         GetComponent<CanvasGroup>().alpha = 1F;
-        LeanTween.alphaCanvas(gameObject.GetComponent<CanvasGroup>(), 0F, 1F);
-        LeanTween.delayedCall(gameObject, 1F, () => gameObject.SetActive(false));
+        LeanTween.alphaCanvas(gameObject.GetComponent<CanvasGroup>(), 0F, velocity).setDelay(delayTime);
+        LeanTween.delayedCall(gameObject, velocity + delayTime, () => gameObject.SetActive(false));
 
     }
 }

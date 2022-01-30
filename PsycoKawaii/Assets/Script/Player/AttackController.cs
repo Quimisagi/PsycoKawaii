@@ -66,15 +66,16 @@ public class AttackController
     {
         _currentTimeToNextAttack -= _currentTimeToNextAttack;
         startAtack?.Invoke();
-        SceneManager.LoadScene("BulletHell");
+        LeanTween.delayedCall(_myTransform.gameObject, 0.5F, () => SceneManager.LoadScene("BulletHell"));
         var npc = _npcDetector.GetNpcTarget().GetComponent<NpcMediator>();
+        npc.ReceiveAggression();
         _currentTarget = npc.Id;
     }
 
     public void Murder()
     {
         AddLevelMadness(35);
-        _levelOfPsychopath.AddLevelPsychopath(5);
+        _levelOfPsychopath.AddLevelPsychopath(-10);
 
         ViewMadness.Instance.UpdateMadness(_levelMadness);
         ViewMadness.Instance.ComprobateGameOver(_levelMadness);
@@ -87,8 +88,8 @@ public class AttackController
 
     public void Forgive()
     {
-        AddLevelMadness(-35);
-        _levelOfPsychopath.AddLevelPsychopath(-5);
+        AddLevelMadness(-25);
+        _levelOfPsychopath.AddLevelPsychopath(-50);
         _currentTimeToNextAttack -= _currentTimeToNextAttack;
 
         ViewMadness.Instance.UpdateMadness(_levelMadness);

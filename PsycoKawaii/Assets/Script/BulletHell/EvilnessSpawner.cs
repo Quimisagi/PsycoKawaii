@@ -37,8 +37,8 @@ public class EvilnessSpawner : MonoBehaviour
 
     public Vector3 GenerateRandomPosition()
     {
-        float posX = Random.Range(-7F, 8F);
-        float posY = Random.Range(-3.5F, 4.5F);
+        float posX = Random.Range(-6.5F, 8F);
+        float posY = Random.Range(-3F, 4.5F);
         if (posX < 1F && posX > 0) posX += 1F;
         if (posX > -1F && posX < 0) posX -= 1F;
         if (posY < 1F && posY > 0) posY += 1F;

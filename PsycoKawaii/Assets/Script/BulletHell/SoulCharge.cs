@@ -12,10 +12,13 @@ public abstract class SoulCharge : MonoBehaviour
     protected bool _isActive = true;
 
     [SerializeField] protected int _value;
+    protected AudioSource _audioSource;
+
 
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {

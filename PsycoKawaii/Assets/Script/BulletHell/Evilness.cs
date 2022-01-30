@@ -14,12 +14,12 @@ public class Evilness : SoulCharge
         Timer.notifyTimeRanOut += Finish;
         GameActivator.startGame += () => _isActive = true;
         _isActive = false;
+        _audioSource = GetComponent<AudioSource>();
 
     }
 
     private void OnDestroy()
     {
-        //notifyGameOver = null;
         Goodness.notifyDestroyed -= Finish;
         Timer.notifyTimeRanOut -= Finish;
         GameActivator.startGame -= () => _isActive = true;
@@ -57,15 +57,12 @@ public class Evilness : SoulCharge
     {
         _isActive   = false;
         _rigidBody.velocity = new Vector2(0, 0);
-        //Destroy(this.gameObject);
     }
 
     protected override void SendNotification(Collider2D collision)
     {
         notifyGameOver?.Invoke();
-        Debug.Log("Paila so");
-        Debug.Log(collision.name);
-
+        _audioSource.Play();
         StopMoving();
 
     }

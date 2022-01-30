@@ -57,12 +57,16 @@ public class PlayerEventsReceptor : MonoBehaviour
 
     private void Desactive()
     {
+        LeanTween.delayedCall(this.gameObject, 0.5F, () => Disapear());
+    }
+
+    private void Disapear()
+    {
         _playerImage.SetActive(false);
         _playerMediator.SetPause(true);
 
         var camera = Camera.main.transform;
         camera.GetComponent<CameraController>().IsActive = false;
-        camera.position = new Vector3(0,0,camera.position.z);
-
+        camera.position = new Vector3(0, 0, camera.position.z);
     }
 }

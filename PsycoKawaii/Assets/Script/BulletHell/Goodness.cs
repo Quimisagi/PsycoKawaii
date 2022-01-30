@@ -9,6 +9,8 @@ public class Goodness : SoulCharge
 
     [SerializeField] private ParticleSystem _particles;
 
+
+
     private void OnDestroy()
     {
         //notifyDestroyed = null;
@@ -29,6 +31,7 @@ public class Goodness : SoulCharge
     {
         notifyDestroyed?.Invoke();
         //this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255, 0);
+        _audioSource.Play();
         _particles.Play();
         StopMoving();
     }
