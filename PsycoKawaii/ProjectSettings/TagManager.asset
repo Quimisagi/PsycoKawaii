@@ -7,6 +7,7 @@ TagManager:
   - Evilness
   - Goodness
   - Charge
+  - Soul
   layers:
   - Default
   - TransparentFX

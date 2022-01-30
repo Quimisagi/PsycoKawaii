@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerEventsReceptor : MonoBehaviour
 {
+    [SerializeField] private PlayerMediator _playerMediator;
+    [SerializeField] private GameObject _playerImage;
+
     void Start()
     {
         AttackController.startAtack += Desactive;
@@ -12,7 +15,7 @@ public class PlayerEventsReceptor : MonoBehaviour
         Timer.notifyTimeRanOut += Kill;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         AttackController.startAtack -= Desactive;
         Goodness.notifyDestroyed -= Forgive;
@@ -20,27 +23,32 @@ public class PlayerEventsReceptor : MonoBehaviour
         Timer.notifyTimeRanOut -= Kill;
     }
 
-    private void Desactive()
-    {
-        this.gameObject.SetActive(false);
-    }
+    
 
     private void Forgive()
     {
-        Reactivate();
-        var player = GetComponent<PlayerMediator>();
-        player.AttackController.Forgive();
+        StartCoroutine(Reactivate());
+        _playerMediator.AttackController.Forgive();
     }
 
     private void Kill()
     {
-        Reactivate();
-        var player = GetComponent<PlayerMediator>();
-        player.AttackController.Murder();
+        StartCoroutine(Reactivate());
+        _playerMediator.AttackController.Murder();
     }
 
-    private void Reactivate()
+    private IEnumerator Reactivate()
     {
-        this.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        _playerImage.SetActive(true);
+        _playerMediator.SetPause(false);
+    }
+
+
+    private void Desactive()
+    {
+        _playerImage.SetActive(false);
+        _playerMediator.SetPause(true);
+
     }
 }

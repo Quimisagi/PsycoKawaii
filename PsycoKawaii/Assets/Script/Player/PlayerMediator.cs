@@ -60,12 +60,12 @@ public class PlayerMediator : MonoBehaviour
 
     void Update()
     {
-        _playerAnimator.WalkAnim();
 
         if (_pause)
         {
             return;
         }
+        _playerAnimator.WalkAnim();
 
         if (_pausePsychopath)
         {

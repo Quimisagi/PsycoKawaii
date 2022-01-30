@@ -16,6 +16,10 @@ public class Goodness : SoulCharge
 
     protected override void DetermineDirection()
     {
+        if (Soul == null)
+        {
+            return;
+        }
         var direction = -(Soul.transform.position - this.transform.position).normalized;
         _rigidBody.velocity = new Vector2(direction.x, direction.y);
 

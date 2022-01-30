@@ -73,10 +73,11 @@ public class AttackController
 
     public void Murder()
     {
+        AddLevelMadness(35);
+        _levelOfPsychopath.AddLevelPsychopath(5);
+
         ViewMadness.Instance.UpdateMadness(_levelMadness);
         ViewMadness.Instance.ComprobateGameOver(_levelMadness);
-        _levelOfPsychopath.AddLevelPsychopath(5);
-        _levelMadness += 35;
         //_playerMediator.SetPause(true);
         //var npc = _npcDetector.GetNpcTarget().GetComponent<NpcMediator>();
         StateOfNPCs.Instance.DeadNPCs.Add(_currentTarget);
@@ -86,11 +87,20 @@ public class AttackController
 
     public void Forgive()
     {
-        ViewMadness.Instance.UpdateMadness(_levelMadness);
+        AddLevelMadness(-35);
         _levelOfPsychopath.AddLevelPsychopath(-5);
-        _levelMadness -= 35;
+
+        ViewMadness.Instance.UpdateMadness(_levelMadness);
     }
 
+
+    public void AddLevelMadness(int amount)
+    {
+        _levelMadness += amount;
+        Debug.Log(_levelMadness + " : " + _myTransform.name);
+
+        _levelMadness = Mathf.Clamp(_levelMadness, 0, 100);
+    }
 
     private void AlertNeighbors()
     {
