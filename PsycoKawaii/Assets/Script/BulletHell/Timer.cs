@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
 
     private void OnDestroy()
     {
-        notifyTimeRanOut = null;
+        //notifyTimeRanOut = null;
         GameActivator.startGame -= () => IsRunning = true;
     }
 

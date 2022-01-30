@@ -11,7 +11,7 @@ public class Goodness : SoulCharge
 
     private void OnDestroy()
     {
-        notifyDestroyed = null;
+        //notifyDestroyed = null;
     }
 
     protected override void DetermineDirection()

@@ -19,7 +19,7 @@ public class Evilness : SoulCharge
 
     private void OnDestroy()
     {
-        notifyGameOver = null;
+        //notifyGameOver = null;
         Goodness.notifyDestroyed -= Finish;
         Timer.notifyTimeRanOut -= Finish;
         GameActivator.startGame -= () => _isActive = true;
@@ -59,6 +59,7 @@ public class Evilness : SoulCharge
     protected override void SendNotification(Collider2D collision)
     {
         notifyGameOver?.Invoke();
+        Debug.Log("Paila so");
         Destroy(collision.gameObject);
         StopMoving();
     }

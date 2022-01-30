@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScreenFader : MonoBehaviour
@@ -11,6 +12,7 @@ public class ScreenFader : MonoBehaviour
     {
         Goodness.notifyDestroyed += FadeInWhite;
         Evilness.notifyGameOver += FadeInRed;
+        Timer.notifyTimeRanOut += FadeInRed;
         gameObject.SetActive(false);
     }
     private void OnDestroy()
@@ -35,6 +37,7 @@ public class ScreenFader : MonoBehaviour
         gameObject.SetActive(true);
         GetComponent<CanvasGroup>().alpha = 0F;
         LeanTween.alphaCanvas(gameObject.GetComponent<CanvasGroup>(), 1F, _speed);
+        LeanTween.delayedCall(this.gameObject, 1F, () => SceneManager.LoadScene("SampleScene"));
     }
 
     public void FadeOut(float velocity, float delayTime)

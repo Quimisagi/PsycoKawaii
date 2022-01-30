@@ -10,6 +10,12 @@ public class TimerEventsReceptor : MonoBehaviour
         Evilness.notifyGameOver += StopTimer;
     }
 
+    private void OnDestroy()
+    {
+        Goodness.notifyDestroyed -= StopTimer;
+        Evilness.notifyGameOver -= StopTimer;
+    }
+
     private void StopTimer()
     {
         GetComponent<Timer>().IsRunning = false;

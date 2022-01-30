@@ -4,6 +4,8 @@ public class NpcMediator : MonoBehaviour
 {
     private NpcMovementController _npcMovementController;
     public LifeController _lifeController { internal set; get; }
+    public int Id { get => _id; set => _id = value; }
+
     private ScaryController _scaryController;
 
     [Header("Configuracion Movimiento")]
@@ -17,6 +19,8 @@ public class NpcMediator : MonoBehaviour
 
     [SerializeField] private bool test;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+
+    [SerializeField] private int _id;
 
     private void Awake()
     {

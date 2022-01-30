@@ -12,6 +12,11 @@ public class CameraShake : MonoBehaviour
         Evilness.notifyGameOver += ShakeCamera;
     }
 
+    private void OnDestroy()
+    {
+        Evilness.notifyGameOver -= ShakeCamera;
+    }
+
     private void ShakeCamera()
     {
         animator.SetTrigger("Shake");

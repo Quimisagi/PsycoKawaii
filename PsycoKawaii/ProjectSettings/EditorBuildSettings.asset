@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/BulletHell/BulletHell.unity
+    guid: 5f4f02821574a9c4d8be04ff1fe86a66
   m_configObjects: {}
