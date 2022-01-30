@@ -30,7 +30,7 @@ public class MisionNpc : MonoBehaviour
             return;
         }
 
-        //DialogueManager.Instance.StartDialogue(_currentMisionDialogue);
+        DialogueManager.Instance.StartDialogue(_currentMisionDialogue);
         _player = collision.GetComponent<PlayerMediator>();
         _speakMision = true;
         _diaglogueView.SetActive(true);

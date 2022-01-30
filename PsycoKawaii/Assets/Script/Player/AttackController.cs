@@ -7,7 +7,7 @@ public class AttackController
     private readonly float _radiusToAttack;
     private readonly int _porcentToAttack;
     private readonly Transform _myTransform;
-    private float _timeToNextAttack = 3;
+    private float _timeToNextAttack = 0.5f;
     private float _currentTimeToNextAttack;
     private int _levelMadness;
 
@@ -34,6 +34,8 @@ public class AttackController
             return false;
         }
 
+      
+
         if (_levelOfPsychopath.GetLevelMadness() <= _porcentToAttack)
         {
             return false;
@@ -41,6 +43,7 @@ public class AttackController
 
         if (_currentTimeToNextAttack < _timeToNextAttack)
         {
+            Debug.Log(_currentTimeToNextAttack);
             _currentTimeToNextAttack += Time.deltaTime;
             return false;
         }

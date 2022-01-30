@@ -20,20 +20,21 @@ public class SceneController : MonoBehaviour
         _fade = FindObjectOfType<FadeScreen>();
     }
 
-    public void ChangeScene(string nameScene, float timeFade, PlayerMediator player, Vector2 position)
+    public void ChangeScene(float timeFade, PlayerMediator player, Vector2 position)
     {
-        StartCoroutine(changeScene(nameScene, timeFade, player, position));
+        StartCoroutine(changeScene( timeFade, player, position));
     }
 
-    private IEnumerator changeScene(string nameScene, float timeFade, PlayerMediator player, Vector2 position)
+    private IEnumerator changeScene( float timeFade, PlayerMediator player, Vector2 position)
     {
         player.SetPause(true);
         _fade.Show(timeFade);
-        yield return new WaitForSeconds(++timeFade);
+        yield return new WaitForSeconds(timeFade);
 
-        SceneManager.LoadScene(nameScene);
+        //SceneManager.LoadScene(nameScene);
         player.transform.position = position;
-        yield return new WaitForSeconds(++timeFade);
+        Camera.main.transform.position = new Vector3(position.x,position.y, Camera.main.transform.position.z);
+        yield return new WaitForSeconds(timeFade);
         _fade.Hidden(timeFade);
         player.SetPause(false);
 

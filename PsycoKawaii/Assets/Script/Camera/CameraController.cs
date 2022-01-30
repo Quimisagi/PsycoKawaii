@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private Vector2 _limitCameraX;
+    [SerializeField] private Vector2 _limitCameraY;
     [SerializeField] private PlayerMediator _playerMediator;
     [SerializeField] private Transform _target;
     [SerializeField] private int _speedCamera;
@@ -24,12 +26,24 @@ public class CameraController : MonoBehaviour
         _target = newTarget;
     }
 
+    public void SetLimit(Vector2 limitCameraX, Vector2 limitCameraY)
+    {
+        _limitCameraX = limitCameraX;
+        _limitCameraY = limitCameraY;
+    }
+
     private void FollowTarget()
     {
         var positionTarget = new Vector3(_target.position.x, _target.position.y, transform.position.z);
-        var smoothMovement = Vector3.Lerp(transform.position, positionTarget, _speedCamera * Time.deltaTime); 
+        var smoothMovement = Vector3.Lerp(transform.position, positionTarget, _speedCamera * Time.deltaTime);
 
-        transform.position = smoothMovement + Shake();
+        var newDirection = smoothMovement + Shake();
+        newDirection.x = Mathf.Clamp(newDirection.x, _limitCameraX.x, _limitCameraX.y);
+        newDirection.y = Mathf.Clamp(newDirection.x, _limitCameraY.x, _limitCameraY.y);
+
+
+        transform.position = newDirection;
+
 
     }
 
