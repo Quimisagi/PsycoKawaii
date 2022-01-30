@@ -19,4 +19,8 @@ MonoBehaviour:
     IsCollet: 0
   - ItemToCollet: {fileID: 11400000, guid: e23608ecf74050f438d161f0706df075, type: 2}
     IsCollet: 0
+  - ItemToCollet: {fileID: 11400000, guid: 1a53441c23b52ff43b4945ac99020660, type: 2}
+    IsCollet: 0
+  - ItemToCollet: {fileID: 11400000, guid: 83892dc8045b53948bc3037a4f987c26, type: 2}
+    IsCollet: 0
   MisionComplete: 0

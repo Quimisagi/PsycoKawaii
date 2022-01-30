@@ -81,6 +81,11 @@ public class NpcMediator : MonoBehaviour
         }
     }
 
+    public void ReceiveAggression()
+    {
+        _audioSource.Play();
+    }
+
 
     private void OnDrawGizmosSelected()
     {

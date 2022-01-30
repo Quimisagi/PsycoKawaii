@@ -10,17 +10,24 @@ public class Timer : MonoBehaviour
     [SerializeField] private float _currentTime;
     public bool IsRunning { get; set; }
     private TextMeshProUGUI _timeText;
+    private AudioSource _audioSource; 
 
     private void Start()
     {
         _timeText = GetComponent<TextMeshProUGUI>();
-        GameActivator.startGame += () => IsRunning = true;
+        GameActivator.startGame += StartRunning;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
     {
-        //notifyTimeRanOut = null;
-        GameActivator.startGame -= () => IsRunning = true;
+        GameActivator.startGame -= StartRunning;
+    }
+
+    private void StartRunning()
+    {
+        IsRunning = true;
+        StartCoroutine(Beep());
     }
 
     void DisplayTime(float timeToDisplay)
@@ -39,13 +46,21 @@ public class Timer : MonoBehaviour
             DisplayTime(_currentTime);
             _currentTime -= Time.deltaTime;
         }
-
+            
         if (_currentTime <= 0 && IsRunning)
         {
             IsRunning   = false;
             notifyTimeRanOut?.Invoke();
-            Debug.Log("ASDASDASDasdASDasdas");
+        }   
+    }
+
+    private IEnumerator Beep()
+    {
+        if(IsRunning)
+        for (int i = 0; i < 9; i++)
+        {
+            _audioSource.Play();
+            yield return new WaitForSeconds(1);
         }
-            
     }
 }
